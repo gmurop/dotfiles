@@ -1,3 +1,6 @@
+package.path = package.path .. ';/home/gmurop/.config/nvim/gmurop/?.lua'
+local keys = require 'keys'
+
 vim.loader.enable()
 
 vim.opt.number = true
@@ -19,23 +22,8 @@ vim.opt.signcolumn = 'yes'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.cursorline = true
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 10
 vim.opt.background = 'dark'
-
--- leader key
-vim.g.mapleader = ','
-
--- Keybindings
-vim.keymap.set({ 'i' }, '<leader>c', '<Esc>')
-vim.keymap.set({ 'n', 'x', 'o' }, '<leader>h', '^')
-vim.keymap.set({ 'n', 'x', 'o' }, '<leader>l', 'g_')
-vim.keymap.set({ 'n' }, '<leader>a', ':keepjumps normal! ggVG<cr>')
-vim.keymap.set({ 'n', 'x' }, 'gy', '"+y')
-vim.keymap.set({ 'n', 'x' }, 'gp', '"+p')
-vim.keymap.set({ 'n', 'x', 'o' }, '<leader>dd', ':Lexplore %:p:h<cr>') -- Open netwr in the dir of current file
-vim.keymap.set({ 'n', 'x', 'o' }, '<leader>da', ':Lexplore<cr>')     -- Open netwr in the dir of working directory
-vim.keymap.set('n', '<c-P>', "<cmd>lua require('fzf-lua').files()<cr>", { silent = true })
-vim.keymap.set({ 'n' }, '<leader>w', '<cmd>write<cr>')
 
 -- plugins
 local lazy = {}
@@ -89,7 +77,14 @@ lazy.setup({
 	{
 		'ibhagwan/fzf-lua',
 		config = function()
-			require('fzf-lua').setup({})
+			require('fzf-lua').setup {
+				winopts = {
+					split = 'belowright new',
+					fullscreen = true,
+					layout = 'horizontal'
+
+				}
+			}
 		end
 	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, config = function() 
@@ -153,40 +148,11 @@ lazy.setup({
 	 }
 })
 
-
-vim.keymap.set({'n'}, '<space>o', vim.diagnostic.open_float, { desc = 'diagnostic.open_float' })
-vim.keymap.set({'n'}, '<space>n', vim.diagnostic.goto_next)
-vim.keymap.set({'n'}, '<space>p', vim.diagnostic.goto_prev)
-vim.keymap.set({'n'}, '<space>l', vim.diagnostic.setloclist)
-
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-	callback = function(ev)
-		-- Enable completion triggered by <c-x><c-o>
-		-- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-		-- Buffer local mappings
-		-- See `:help vim.lsp.*` for documontation on any of the below functions
-		local opts = { buffer = ev.buf }
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-		vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, opts)
-		vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-		vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-		vim.keymap.set({ 'n', 'v' }, '<space>f', function()
-		  vim.lsp.buf.format { async = true }
-		end, opts)
-
-		-- Todo: Investigate how to use workspaces
-		vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-		vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-		vim.keymap.set('n', '<space>wl', function()
-		  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
-	end
-})
+	callback = function(ev) 
+		keys.set_lsp_keybindings(ev)
+	end})
 
 -- treesitter
 require('nvim-treesitter.configs').setup({

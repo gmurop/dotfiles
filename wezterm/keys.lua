@@ -6,19 +6,19 @@ local keys = {
 { key = 'Enter', mods = 'SHIFT|CTRL', action = act.ToggleFullScreen },
 { key = '\'', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
 { key = '%', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
-{ key = '(', mods = 'SHIFT|CTRL', action = act.SplitPane{
+{ key = 's', mods = 'LEADER', action = act.SplitPane{
 		direction = 'Down',
 		size = { Cells = 10},
 		top_level = false
 	}},
-{ key = ')', mods = 'SHIFT|CTRL', action = act.SplitPane{
+{ key = 'v', mods = 'LEADER', action = act.SplitPane{
 		direction = 'Right',
 		size = {Percent = 40},
 		top_level = false
 	}},
 { key = '+', mods = 'LEADER|SHIFT', action = act.IncreaseFontSize },
 { key = '-', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },
-{ key = '0', mods = 'LEADER', action = act.ResetFontSize },
+-- { key = '0', mods = 'LEADER', action = act.ResetFontSize },
 { key = 'C', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
 { key = 'C', mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
 { key = 'F', mods = 'SHIFT|CTRL', action = act.Search 'CurrentSelectionOrEmptyString' },
@@ -43,7 +43,7 @@ local keys = {
 { key = 'RightArrow', mods = 'SHIFT|CTRL', action = act.AdjustPaneSize{ 'Right', 3 } },
 { key = 'K', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Up' },
 { key = 'UpArrow', mods = 'SHIFT|CTRL', action = act.AdjustPaneSize{ 'Up', 3 } },
-{ key = 'J', mods = 'LEADER|SHIFT', action = act.ActivatePaneDirection 'Down' },
+{ key = 'J', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Down' },
 { key = 'DownArrow', mods = 'SHIFT|CTRL', action = act.AdjustPaneSize{ 'Down', 3 } },
 }
 
