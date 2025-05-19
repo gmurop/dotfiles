@@ -1,0 +1,69 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "theme": "One Dark",
+  "format_on_save": "off",
+  "formatter": {
+    "code_actions": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_multiline_find": true
+  },
+  "command_aliases": {
+    "W": "w"
+  },
+  "scrollbar": {
+    "show": "auto"
+  },
+  "relative_line_numbers": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "show_wrap_guides": true,
+  "wrap_guides": [80],
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "tabs": {
+    "file_icons": true,
+    "activate_on_close":"history"
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    }
+  },
+  "cursor_blink": false,
+  "project_panel": {
+    "auto_fold_dirs": true
+  },
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "diagnostics": {
+    "include_warnings": false
+  },
+  "confirm_quit": true,
+  "file_finder": {
+    "modal_max_width": "medium"
+  }
+}

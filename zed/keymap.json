@@ -1,0 +1,57 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g D": "editor::GoToTypeDefinition",
+      "g _": "editor::OpenExcerpts",
+      "g -": "project_panel::ToggleFocus",
+      "g r": "editor::Rename",
+      "g \\": "tab_switcher::Toggle",
+      "space n": "editor::GoToDiagnostic",
+      "space N": "editor::GoToPreviousDiagnostic",
+      "space c": "editor::GoToHunk",
+      "space C": "editor::GoToPreviousHunk",
+      "space z": ["workspace::SendKeystrokes", "alt-cmd-z"],
+      "space t": "editor::ToggleSelectedDiffHunks",
+      "cmd-o": "pane::GoBack",
+      "cmd-i": "pane::GoForward",
+      "cmd-d": "vim::ScrollDown",
+      "cmd-u": "vim::ScrollUp",
+      "cmd-r": "editor::Redo",
+      "cmd-h": "workspace::ActivatePreviousPane",
+      "cmd-l": "workspace::ActivateNextPane",
+      "cmd-e": "vim::LineDown",
+      "cmd-y": "vim::LineUp",
+      ", w": "workspace::Save",
+      ", W": "workspace::SaveAll",
+      ", m": "editor::FoldAll",
+      ", r": "editor::UnfoldAll"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      ", h": "editor::MoveToBeginningOfLine",
+      ", l": "editor::MoveToEndOfLine"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      ", c": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "EmptyPane",
+    "bindings": {
+      "cmd-o": "workspace::Open",
+      "g -": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  }
+]
