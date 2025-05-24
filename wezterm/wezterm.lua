@@ -5,7 +5,8 @@ local config = {}
 
 wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+  -- Todo - Resize to max and min
+  -- window:gui_window():maximize()
 end)
 
 -- config.color_scheme = 'Ef-Trio-Dark'
@@ -17,9 +18,9 @@ config.font = wezterm.font_with_fallback {
 	},
 	'JetBrains Mono'
 }
-config.font_size = 11
+config.font_size = 18
 config.line_height = 1.2
-config.default_prog = { '/usr/bin/fish', '-l' }
+config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.window_decorations = 'RESIZE'
 config.use_dead_keys = false
 config.use_fancy_tab_bar = false
@@ -29,10 +30,8 @@ config.inactive_pane_hsb = {
 	brightness = 0.8
 }
 
-config.default_domain = 'WSL:Ubuntu'
-
 config.disable_default_key_bindings = false
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = 'a', mods = 'CMD', timeout_milliseconds = 1000 }
 
 config.keys = require 'keys'
 
