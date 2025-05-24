@@ -18,7 +18,7 @@ config.font = wezterm.font_with_fallback {
 	},
 	'JetBrains Mono'
 }
-config.font_size = 18
+config.font_size = 14
 config.line_height = 1.2
 config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 config.window_decorations = 'RESIZE'
