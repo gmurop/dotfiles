@@ -10,7 +10,7 @@
   "features": {
     "edit_prediction_provider": "none"
   },
-  "theme": "One Dark",
+  "theme": "Ayu Mirage",
   "format_on_save": "off",
   "formatter": {
     "code_actions": {
