@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": "Catppuccin Frappé",
   "features": {
     "edit_prediction_provider": "none"
   },
@@ -50,9 +51,14 @@
     "show_nav_history_buttons": false
   },
   "terminal": {
+    "default_height": 9999,
+    "dock": "bottom",
     "shell": {
       "program": "fish"
     }
+  },
+  "debugger": {
+    "dock": "right"
   },
   "cursor_blink": false,
   "project_panel": {

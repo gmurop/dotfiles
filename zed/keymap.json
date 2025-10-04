@@ -7,12 +7,11 @@
       "g -": "project_panel::ToggleFocus",
       "g r": "editor::Rename",
       "g \\": "tab_switcher::Toggle",
+      "g y": "workspace::CopyPath",
       "space n": "editor::GoToDiagnostic",
       "space N": "editor::GoToPreviousDiagnostic",
       "space c": "editor::GoToHunk",
       "space C": "editor::GoToPreviousHunk",
-      "space z": ["workspace::SendKeystrokes", "alt-cmd-z"],
-      "space t": "editor::ToggleSelectedDiffHunks",
       "cmd-o": "pane::GoBack",
       "cmd-i": "pane::GoForward",
       "cmd-d": "vim::ScrollDown",
@@ -25,14 +24,17 @@
       ", w": "workspace::Save",
       ", W": "workspace::SaveAll",
       ", m": "editor::FoldAll",
-      ", r": "editor::UnfoldAll"
+      ", r": "editor::UnfoldAll",
+      ", t": "editor::ToggleSelectedDiffHunks",
+      ", d": "git::Diff",
+      ", z": ["workspace::SendKeystrokes", "alt-cmd-z"]
     }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      ", h": "editor::MoveToBeginningOfLine",
-      ", l": "editor::MoveToEndOfLine"
+      ", h": ["workspace::SendKeystrokes", "^"],
+      ", l": ["workspace::SendKeystrokes", "$"]
     }
   },
   {

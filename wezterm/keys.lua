@@ -1,5 +1,4 @@
 local wezterm = require 'wezterm'
-
 local act = wezterm.action
 
 local keys = {
@@ -45,6 +44,7 @@ local keys = {
 { key = 'UpArrow', mods = 'SHIFT|CTRL', action = act.AdjustPaneSize{ 'Up', 3 } },
 { key = 'J', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Down' },
 { key = 'DownArrow', mods = 'SHIFT|CTRL', action = act.AdjustPaneSize{ 'Down', 3 } },
+{ key = 'f', mods = 'CMD', action = act.ToggleFullScreen },
 }
 
 return keys
