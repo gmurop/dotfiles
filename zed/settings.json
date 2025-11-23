@@ -7,25 +7,22 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "code_actions_on_format": {
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  },
   "icon_theme": "Catppuccin Frappé",
   "features": {
     "edit_prediction_provider": "none"
   },
   "theme": "Ayu Mirage",
   "format_on_save": "off",
-  "formatter": {
-    "code_actions": {
-      "source.fixAll.eslint": true,
-      "source.organizeImports": true
-    }
-  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
   "vim_mode": true,
   "vim": {
-    "use_multiline_find": true
   },
   "command_aliases": {
     "W": "w"
@@ -60,6 +57,9 @@
   "debugger": {
     "dock": "right"
   },
+  "outline_panel": {
+    "dock": "right"
+  },
   "cursor_blink": false,
   "project_panel": {
     "auto_fold_dirs": true
@@ -71,5 +71,6 @@
   "confirm_quit": true,
   "file_finder": {
     "modal_max_width": "medium"
-  }
+  },
+  "diagnostics_max_severity": "error"
 }

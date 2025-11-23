@@ -41,7 +41,6 @@ config.inactive_pane_hsb = {
 	brightness = 0.8
 }
 
-config.disable_default_key_bindings = false
 config.leader = { key = 'a', mods = 'CMD', timeout_milliseconds = 1000 }
 
 config.keys = require 'keys'

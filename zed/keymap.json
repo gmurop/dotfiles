@@ -3,11 +3,10 @@
     "context": "VimControl && !menu",
     "bindings": {
       "g D": "editor::GoToTypeDefinition",
-      "g _": "editor::OpenExcerpts",
       "g -": "project_panel::ToggleFocus",
       "g r": "editor::Rename",
-      "g \\": "tab_switcher::Toggle",
       "g y": "workspace::CopyPath",
+      "g o": "editor::OrganizeImports",
       "space n": "editor::GoToDiagnostic",
       "space N": "editor::GoToPreviousDiagnostic",
       "space c": "editor::GoToHunk",
@@ -17,9 +16,9 @@
       "cmd-d": "vim::ScrollDown",
       "cmd-u": "vim::ScrollUp",
       "cmd-r": "editor::Redo",
+      "cmd-e": "vim::LineDown",
       "cmd-h": "workspace::ActivatePreviousPane",
       "cmd-l": "workspace::ActivateNextPane",
-      "cmd-e": "vim::LineDown",
       "cmd-y": "vim::LineUp",
       ", w": "workspace::Save",
       ", W": "workspace::SaveAll",
@@ -27,7 +26,14 @@
       ", r": "editor::UnfoldAll",
       ", t": "editor::ToggleSelectedDiffHunks",
       ", d": "git::Diff",
-      ", z": ["workspace::SendKeystrokes", "alt-cmd-z"]
+      ", z": ["workspace::SendKeystrokes", "alt-cmd-z"],
+      ", -": "editor::OpenExcerpts",
+      ", v": "pane::SplitVertical",
+      ", b": "editor::ToggleGitBlame",
+      "cmd-B": "workspace::ToggleRightDock",
+      "g t": "vim::GoToTab",
+      "g T": "vim::GoToPreviousTab",
+      "g m": "vim::ToggleMarksView"
     }
   },
   {
