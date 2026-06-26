@@ -7,14 +7,27 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "edit_predictions": {
+    "provider": "none"
+  },
+  "show_edit_predictions": true,
+  "colorize_brackets": true,
   "code_actions_on_format": {
     "source.organizeImports": true,
     "source.fixAll.eslint": true
   },
   "icon_theme": "Catppuccin Frappé",
-  "features": {
-    "edit_prediction_provider": "none"
-  },
   "theme": "Ayu Mirage",
   "format_on_save": "off",
   "telemetry": {
@@ -30,7 +43,7 @@
   "scrollbar": {
     "show": "auto"
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "show_wrap_guides": true,
@@ -62,6 +75,7 @@
   },
   "cursor_blink": false,
   "project_panel": {
+    "dock": "left",
     "auto_fold_dirs": true
   },
   "scroll_beyond_last_line": "vertical_scroll_margin",

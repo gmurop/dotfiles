@@ -4,7 +4,6 @@ local act = wezterm.action
 local keys = {
 { key = 'Enter', mods = 'SHIFT|CMD', action = act.ToggleFullScreen },
 { key = 'C', mods = 'CMD', action = act.CopyTo 'Clipboard' },
-{ key = 'C', mods = 'SHIFT|CMD', action = act.CopyTo 'Clipboard' },
 { key = 'F', mods = 'SHIFT|CMD', action = act.Search 'CurrentSelectionOrEmptyString' },
 { key = 'l', mods = 'LEADER', action = act.ShowDebugOverlay },
 { key = 'N', mods = 'SHIFT|CMD', action = act.SpawnWindow },
@@ -19,6 +18,16 @@ local keys = {
 { key = 'u', mods = 'CMD', action = act.SendKey { key = 'u', mods = 'CTRL' }, },
 { key = 'y', mods = 'CMD', action = act.SendKey { key = 'y', mods = 'CTRL' }, },
 { key = 'e', mods = 'CMD', action = act.SendKey { key = 'e', mods = 'CTRL' }, },
+	{
+    key = 'C',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action_callback(function(window, pane)
+      local sel = window:get_selection_text_for_pane(pane)
+      sel = sel:gsub('([^\n])\n([^\n])', '%1 %2')
+      sel = sel:gsub(' +', ' ')
+      window:copy_to_clipboard(sel)
+    end),
+  }
 }
 
 return keys

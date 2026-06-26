@@ -20,6 +20,7 @@
       "cmd-h": "workspace::ActivatePreviousPane",
       "cmd-l": "workspace::ActivateNextPane",
       "cmd-y": "vim::LineUp",
+      "cmd-h": "git::FileHistory",
       ", w": "workspace::Save",
       ", W": "workspace::SaveAll",
       ", m": "editor::FoldAll",
@@ -33,7 +34,8 @@
       "cmd-B": "workspace::ToggleRightDock",
       "g t": "vim::GoToTab",
       "g T": "vim::GoToPreviousTab",
-      "g m": "vim::ToggleMarksView"
+      "g m": "vim::ToggleMarksView",
+      "shift-Esc": "zed::NoAction"
     }
   },
   {
@@ -60,6 +62,16 @@
     "context": "Terminal",
     "bindings": {
       "cmd-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "bindings": {
+      "shift-escape": null
+    }
+  },
+  {
+    "bindings": {
+      "shift-escape": null
     }
   }
 ]
