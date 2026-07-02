@@ -13,7 +13,7 @@ wezterm.on('gui-startup', function(cmd)
   -- window:gui_window():maximize()
 end)
 
--- config.color_scheme = 'Ef-Trio-Dark'
+config.color_scheme = 'Batman'
 config.font = wezterm.font_with_fallback {
 	{
 		family = 'Fira Code',
